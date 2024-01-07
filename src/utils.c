@@ -101,7 +101,6 @@ int parseLine(char *line, char *nodeMain, char **connectedNodes)
     }
 
     // Parse the connected nodes
-    int i = 0;
     char *token = strtok(line, ":;");
 
     // Extract the main node

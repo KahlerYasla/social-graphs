@@ -17,7 +17,6 @@ void addNode(Graph *graph, char *nodeMain, char **connectedNodes)
     graph->numNodes++;
 
     int i = 0;
-    int i = 0;
     while (connectedNodes[i] != NULL)
     {
         if (connectedNodes[i] != NULL) // add connected node to the graph
