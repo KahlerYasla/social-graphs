@@ -17,16 +17,14 @@ void addNode(Graph *graph, char *nodeMain, char **connectedNodes)
     graph->numNodes++;
 
     int i = 0;
-    for (i = 0; connectedNodes[i] != NULL; ++i)
+    int i = 0;
+    while (connectedNodes[i] != NULL)
     {
-        if (connectedNodes[i] == NULL) // if there are no more connected nodes, break
-        {
-            break;
-        }
-        else // add connected node to the graph
+        if (connectedNodes[i] != NULL) // add connected node to the graph
         {
             graph->nodes[graph->numNodes].numConnectedNodes++;
         }
+        i++;
     }
 
     printf("Added node %s with %d many connected nodes\n", nodeMain, graph->nodes[graph->numNodes].numConnectedNodes);
@@ -34,11 +32,15 @@ void addNode(Graph *graph, char *nodeMain, char **connectedNodes)
 
 void printGraph(Graph *graph)
 {
-    for (int i = 0; i < graph->numNodes; ++i)
+
+    int i = 0;
+    for (; i < graph->numNodes; ++i)
     {
         printf("Node %d: %s\n", i, graph->nodes[i].nodeMain);
         printf("Connected nodes: ");
-        for (int j = 0; j < graph->nodes[i].numConnectedNodes; ++j)
+
+        int j = 0;
+        for (; j < graph->nodes[i].numConnectedNodes; ++j)
         {
             printf("%s ", graph->nodes[i].connectedNodes[j]);
         }

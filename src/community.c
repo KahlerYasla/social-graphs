@@ -11,14 +11,16 @@ void detectCommunities(Graph *graph, int minCommunitySize)
 
     int i = 0;
     // Initialize communities
-    for (i = 0; i < MAX_NODES; ++i)
+    for (; i < MAX_NODES; ++i)
     {
         communities[i].numMembers = 0;
     }
 
     // Detect communities until a stopping criterion is met
     int iteration = 0;
-    while (1)
+    int stopIteration = 0;
+
+    while (!stopIteration)
     {
         // Calculate edge betweenness for all edges
         calculateEdgeBetweenness(graph, edgeBetweenness);
@@ -39,13 +41,13 @@ void detectCommunities(Graph *graph, int minCommunitySize)
             {
                 // Stopping criterion 3.a: If the number of communities remains the same for k consecutive iterations
                 if (compareCommunities(communities, graph->numNodes))
-                    break;
+                    stopIteration = 1;
             }
             else
             {
                 // Stopping criterion 3.b: If the size of a community drops below the minimum specified size
                 if (checkMinCommunitySize(communities, graph->numNodes, minCommunitySize))
-                    break;
+                    stopIteration = 1;
             }
         }
 

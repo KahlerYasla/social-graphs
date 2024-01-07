@@ -68,11 +68,13 @@ void printCommunities(Community *communities, int numCommunities)
 {
     printf("Topluluk Sayısı: %d\n", numCommunities);
 
-    for (int i = 0; i < numCommunities; ++i)
+    int i = 0;
+    for (; i < numCommunities; ++i)
     {
         printf("Topluluk %d: ", i + 1);
 
-        for (int j = 0; j < communities[i].numMembers; ++j)
+        int j = 0;
+        for (; j < communities[i].numMembers; ++j)
         {
             printf("%c", communities[i].members[j] + 'A');
             if (j < communities[i].numMembers - 1)
@@ -91,7 +93,9 @@ int parseLine(char *line, char *nodeMain, char **connectedNodes)
     printf("-----------\n");
     // print the whole line character by character
     printf("Line: ");
-    for (int i = 0; i < strlen(line); ++i)
+
+    int i = 0;
+    for (; i < strlen(line); ++i)
     {
         printf("%c", line[i]);
     }

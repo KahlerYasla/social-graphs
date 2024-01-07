@@ -68,7 +68,8 @@ int main()
     free(line);
     free(nodeMain);
 
-    for (int i = 0; connectedNodes[i] != NULL; ++i)
+    int i = 0;
+    for (; connectedNodes[i] != NULL; ++i)
     {
         free(connectedNodes[i]);
     }
