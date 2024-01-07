@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "social_graph.h": "c",
+        "stdio.h": "c",
+        "community.h": "c",
+        "stdlib.h": "c",
+        "_stdio.h": "c",
+        "colored_output.h": "c",
+        "utils.h": "c"
+    }
+}
